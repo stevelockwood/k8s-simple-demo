@@ -1,0 +1,25 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: course-demo-app
+spec:
+  selector:
+    matchLabels:
+      app: courseapp
+      env: prod
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: courseapp
+        env: prod
+    spec:
+      containers:
+      - name: course1207app
+        image: courseregistry/1207app:v2  # image in Dockerhub
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            memory: "200Mi"
+            cpu: "200m"
