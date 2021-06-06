@@ -1,13 +1,13 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-    name: course-app-autoscaler
+    name: space-invader-autoscaler
 spec:
     scaleTargetRef:
         apiVersion: apps/v1
         kind: Deployment
-        name: course-demo-app
-    minReplicas: 2
+        name: space-invaders
+    minReplicas: 3
     maxReplicas: 10
     metrics:
     - type: Resource

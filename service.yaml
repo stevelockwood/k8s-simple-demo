@@ -1,14 +1,13 @@
-apiVersion: v1 
+apiVersion: v1
 kind: Service
 metadata:
-  name: course-app-frontend
+  name: space-invader-service
 spec:
   ports:
-  - name: http
-    port: 80
-    targetPort: 80
+  - port: 80
     protocol: TCP
+    targetPort: 8080
   selector:
-    app: courseapp
-    env: prod
-  type: LoadBalancer  
+      app: space-invaders
+      env: prod
+  type: LoadBalancer
