@@ -15,7 +15,7 @@ spec:
         env: prod
     spec:
       containers:
-      - image: coursedemos/spaceinvaders:v2
+      - image: coursedemos/spaceinvaders:v1
         name: space-invaders
         ports:
         - containerPort: 8080
